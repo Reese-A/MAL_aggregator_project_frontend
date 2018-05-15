@@ -16,7 +16,6 @@ export class HomeComponent {
 
   }
 
-
   submit(e) {
     e.preventDefault();
     console.log(e);

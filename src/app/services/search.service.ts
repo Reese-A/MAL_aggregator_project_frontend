@@ -12,8 +12,4 @@ export class SearchService {
     return this.http.get(`https://kuristina.herokuapp.com/anime/${user.name}.json`);
   }
 
-  submitInquiry(data) {
-    console.log('submitting');
-    return this.http.post('http://somurl.com', data); // returns an observable
-  }
 }
