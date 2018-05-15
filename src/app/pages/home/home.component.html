@@ -7,7 +7,7 @@
 
 <h3>Get started by searching for a MAL user to bring up their list of shows:</h3>
 <form>
-  <input type="text" name = "mal_user" placeholder = "MAL username">
+  <input type="text" name = "name" placeholder = "MAL username" [(ngModel)] = "malUser.name">
   <br>
-  <button>Search</button>
+  <button (click)="submit($event)">Search</button>
 </form>
