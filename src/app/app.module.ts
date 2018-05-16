@@ -6,13 +6,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 import { SearchService } from './services/search.service';
+import { RegisterService } from './services/register.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -21,12 +24,13 @@ import { SearchService } from './services/search.service';
     RouterModule.forRoot(
       [
         { path: '', component: HomeComponent },
+        { path: 'register', component: RegisterComponent },
         { path: '**', redirectTo: '', pathMatch: 'full' }
       ],
       { enableTracing: true }
     ),
   ],
-  providers: [SearchService],
+  providers: [SearchService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+<h3>Register new user</h3>
+<br>
+<form>
+  <input type="text" name="username" placeholder="Username" [(ngModel)]="userData.username">
+  <br>
+  <input type="text" name="email" placeholder="Email" [(ngModel)]="userData.email">
+  <br>
+  <input type="text" name="password" placeholder="Password" [(ngModel)]="userData.password">
+  <br>
+  <button (click)="submit($event)">Submit</button>
+</form>
