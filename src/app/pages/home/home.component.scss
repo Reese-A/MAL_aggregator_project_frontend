@@ -1,37 +1,134 @@
+#homeTitle {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    margin-top: 40px;
+  }
+  @media only screen and (min-width: 1224px) {
+    margin-top: 60px;
+  }
+}
+
 #homeNavWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    margin-top: 30px;
+  }
+  @media only screen and (min-width: 1224px) {
+    margin-top: 40px;
+  }
 
-  a{
+  a {
     margin: 0px 15px;
     text-decoration: none;
     color: blue;
     font-size: 20px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 30px;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 35px;
+    }
   }
 }
 
-#homeInfo{
-  text-align: center;
-  font-size: 20px;
-}
-
-
-#searchForm{
+#searchForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    margin-top: 60px;
+  }
+  @media only screen and (min-width: 1224px) {
+    margin-top: 200px;
+  }
 
-  #userSearch{
+  #homeInfo {
+    text-align: center;
+    font-size: 20px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width: 85%;
+      font-size: 25px;
+    }
+    @media only screen and (min-width: 1224px) {
+      font-size: 30px;
+    }
+  }
+  #userSearch {
     width: 80%;
     height: 20px;
     border-radius: 5px;
     text-align: center;
-  }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width: 65%;
+      height: 30px;
+      font-size: 20px;
+    }
+    @media only screen and (min-width: 1224px) {
+      width: 45%;
+      height: 30px;
+      font-size: 23px;
+    }
 
-  #searchButton{
+  }
+  #searchButton {
     border-radius: 5px;
-    background-color:lightblue;
+    background-color: lightblue;
     box-shadow: 1px 1px #6E6B6A;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width: 10%;
+      height: 30px;
+      font-size: 20px;
+    }
+    @media only screen and (min-width: 1224px) {
+      width: 15%;
+      height: 30px;
+      font-size: 23px;
+    }
+
+  }
+}
+
+#userName {
+  text-align: center;
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    font-size: 40px;
+  }
+  @media only screen and (min-width: 1224px) {
+    font-size: 45px;
+  }
+}
+
+#userCardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  .userCard {
+    width: 30%;
+    margin-bottom: 15px;
+    font-size: 13px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width: 22%;
+      font-size: 18px;
+    }
+    @media only screen and (min-width: 1224px) {
+      width: 18%;
+      font-size: 20px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .userTitle {
+      font-size: 17px;
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        font-size: 20px;
+      }
+      @media only screen and (min-width: 1224px) {
+        font-size: 25px;
+      }
+    }
   }
 }

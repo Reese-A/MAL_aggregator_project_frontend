@@ -6,17 +6,17 @@
 </div>
 
 <div id="homeNavWrapper">
-<a routerLink="/login" id="login">
-  <div>Login</div>
-</a>
+  <a routerLink="/login" id="login">
+    <div>Login</div>
+  </a>
 
-<a routerLink="/register" id="register">
-  <div>Register</div>
-</a>
+  <a routerLink="/register" id="register">
+    <div>Register</div>
+  </a>
 </div>
 
-<h3 id="homeInfo">Get started by searching for a MAL user to bring up their list of shows:</h3>
 <form id="searchForm">
+  <h3 id="homeInfo">Get started by searching for a MAL user to bring up their list of shows:</h3>
   <input type="text" name="name" placeholder="MAL username" [(ngModel)]="malUser.name" id="userSearch">
   <br>
   <button (click)="submit($event)" id="searchButton">Search</button>
@@ -29,10 +29,10 @@
 <!-- <a routerLink = "></a> -->
 <div id="userCardWrapper">
   <div *ngFor="let show of userSeries" class="userCard">
-    {{show.series_title}}
-    <br>
     <img src="{{show.series_image}}" alt="">
-    <br> Score: {{show.my_score}}
-    <br> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
+    <div class="userTitle">{{show.series_title}}</div>
+    <div class="userScore"> Score: {{show.my_score}}</div>
+    <div class="userEpisodes"> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
+    </div>
   </div>
 </div>
