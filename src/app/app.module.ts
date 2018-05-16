@@ -7,15 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 import { SearchService } from './services/search.service';
 import { RegisterService } from './services/register.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,12 +28,13 @@ import { RegisterService } from './services/register.service';
       [
         { path: '', component: HomeComponent },
         { path: 'register', component: RegisterComponent },
+        { path: 'login', component: LoginComponent },
         { path: '**', redirectTo: '', pathMatch: 'full' }
       ],
       { enableTracing: true }
     ),
   ],
-  providers: [SearchService, RegisterService],
+  providers: [SearchService, RegisterService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
