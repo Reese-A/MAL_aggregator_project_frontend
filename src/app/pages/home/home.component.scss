@@ -1,0 +1,37 @@
+#homeNavWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  a{
+    margin: 0px 15px;
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+  }
+}
+
+#homeInfo{
+  text-align: center;
+  font-size: 20px;
+}
+
+
+#searchForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #userSearch{
+    width: 80%;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  #searchButton{
+    border-radius: 5px;
+    background-color:lightblue;
+    box-shadow: 1px 1px #6E6B6A;
+  }
+}
