@@ -33,7 +33,7 @@ export class HomeComponent {
         } else {
           this.hasData = false;
         }
-        this.user[name] = data['myanimelist']['myinfo']['user_name'];
+        this.user['name'] = data['myanimelist']['myinfo']['user_name'];
         const sortedSeries = data['myanimelist']['anime'].sort(function compare(a, b) {
           if (Number(a.my_score) > Number(b.my_score)) {
             return -1;

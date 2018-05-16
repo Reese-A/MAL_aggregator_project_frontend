@@ -26,10 +26,12 @@
 <br>
 
 <h3 *ngIf="hasData === false" id="invalidUser">Could not find MAL user with that name, or their list is not public</h3>
+<div *ngIf="hasData === true" id="userWrapper">
+<div id="userNameHeader">Displaying list for MAL user</div>
+<div id="userName">{{user.name}}</div>
+<button id="addUserButton">Add user to my group</button>
+</div>
 
-<h3 *ngIf="hasData === true" id="userNameHeader">Displaying list for MAL user</h3>
-<h2 *ngIf="hasData === true" id="userName">{{user.name}}</h2>
-<!-- <a routerLink = "></a> -->
 
 <div *ngIf="hasData === true" id="userCardWrapper">
   <div *ngFor="let show of userSeries" class="userCard">
