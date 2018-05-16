@@ -25,9 +25,13 @@
 <br>
 <br>
 
-<h2 id="userName">{{user.name}}</h2>
+<h3 *ngIf="hasData === false" id="invalidUser">Could not find MAL user with that name, or their list is not public</h3>
+
+<h3 *ngIf="hasData === true" id="userNameHeader">Displaying list for MAL user</h3>
+<h2 *ngIf="hasData === true" id="userName">{{user.name}}</h2>
 <!-- <a routerLink = "></a> -->
-<div id="userCardWrapper">
+
+<div *ngIf="hasData === true" id="userCardWrapper">
   <div *ngFor="let show of userSeries" class="userCard">
     <img src="{{show.series_image}}" alt="">
     <div class="userTitle">{{show.series_title}}</div>

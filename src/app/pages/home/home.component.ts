@@ -14,9 +14,11 @@ export class HomeComponent {
   malUser: Object = {
     name: ''
   };
+  hasData: boolean;
 
   constructor(private searchService: SearchService) {
     this.title = 'MAL Ratings Aggregator' || '';
+    this.hasData = null;
   }
 
   submit(e) {
@@ -26,6 +28,11 @@ export class HomeComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
+        if (data.myanimelist) {
+          this.hasData = true;
+        } else{
+          this.hasData = false;
+        }
         this.user.name = data.myanimelist.myinfo.user_name;
         const sortedSeries = data.myanimelist.anime.sort(function compare(a, b) {
           if (Number(a.my_score) > Number(b.my_score)) {
