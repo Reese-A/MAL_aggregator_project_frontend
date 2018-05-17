@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ export class LoginComponent {
     password: ''
   };
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
 
   }
 
@@ -22,6 +23,7 @@ export class LoginComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
+        this.router.navigateByUrl('/');
       })
       .catch((err) => {
         console.log(err);

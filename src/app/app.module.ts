@@ -12,6 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SearchService } from './services/search.service';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
+import { GroupService } from './services/group.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { LoginService } from './services/login.service';
       { enableTracing: true }
     ),
   ],
-  providers: [SearchService, RegisterService, LoginService],
+  providers: [SearchService, RegisterService, LoginService, GroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

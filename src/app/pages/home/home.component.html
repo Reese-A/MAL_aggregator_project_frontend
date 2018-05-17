@@ -29,7 +29,7 @@
 <div *ngIf="hasData === true" id="userWrapper">
 <div id="userNameHeader">Displaying list for MAL user</div>
 <div id="userName">{{user.name}}</div>
-<button id="addUserButton">Add user to my group</button>
+<button (click)="addUser()" id="addUserButton">Add user to my group</button>
 </div>
 
 
