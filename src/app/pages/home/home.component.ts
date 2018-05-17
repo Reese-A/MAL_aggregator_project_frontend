@@ -35,9 +35,7 @@ export class HomeComponent {
     });
   }
 
-  submit(e) {
-    e.preventDefault();
-
+  findUser() {
     this.searchService.getData(this.malUser)
 
       .toPromise()

@@ -15,11 +15,15 @@
   </a>
 </div>
 
+<div id="groupButtonWrapper">
+<button id="myGroupButton">View my group</button>
+</div>
+
 <form id="searchForm">
   <h3 id="homeInfo">Get started by searching for a MAL user to bring up their list of shows:</h3>
   <input type="text" name="name" placeholder="MAL username" [(ngModel)]="malUser.name" id="userSearch">
   <br>
-  <button (click)="submit($event)" id="searchButton">Search</button>
+  <button (click)="findUser()" id="searchButton">Search</button>
 </form>
 
 <br>
