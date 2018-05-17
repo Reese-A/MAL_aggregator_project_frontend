@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
   constructor(private http: HttpClient) { }
 
-  getData(user) {
-    console.log(user);
-    return this.http.get(`https://kuristina.herokuapp.com/anime/${user.name}.json`);
+  getData(username) {
+    console.log(username);
+    return this.http.get(`https://kuristina.herokuapp.com/anime/${username}.json`);
   }
 
 }

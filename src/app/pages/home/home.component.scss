@@ -31,21 +31,19 @@
   }
 }
 
-#groupButtonWrapper {
+#groupLinkWrapper {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-  #myGroupButton {
-    border-radius: 5px;
-    background-color: lightblue;
-    box-shadow: 1px 1px #6E6B6A;
+  text-decoration: none;
+  #myGroup {
+    color: blue;
+    font-size: 20px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      height: 25px;
-      font-size: 18px;
+      font-size: 30px;
     }
     @media only screen and (min-width: 1025px) {
-      height: 30px;
-      font-size: 20px;
+      font-size: 35px;
     }
   }
 }

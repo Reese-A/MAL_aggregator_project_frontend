@@ -36,7 +36,7 @@ export class HomeComponent {
   }
 
   findUser() {
-    this.searchService.getData(this.malUser)
+    this.searchService.getData(this.malUser['name'])
 
       .toPromise()
       .then((data) => {

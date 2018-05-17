@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { GroupComponent } from './pages/group/group.component';
 
 import { SearchService } from './services/search.service';
 import { RegisterService } from './services/register.service';
@@ -19,7 +20,8 @@ import { GroupService } from './services/group.service';
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { GroupService } from './services/group.service';
         { path: '', component: HomeComponent },
         { path: 'register', component: RegisterComponent },
         { path: 'login', component: LoginComponent },
+        { path: 'group', component: GroupComponent},
         { path: '**', redirectTo: '', pathMatch: 'full' }
       ],
       { enableTracing: true }
