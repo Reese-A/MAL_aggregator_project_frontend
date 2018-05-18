@@ -1,8 +1,20 @@
 <h1 id="groupHeader">My Group</h1>
 
-<ul>
+
+<ul>MAL users in my group:
   <li *ngFor = "let user of usersData">
     {{user.myanimelist.myinfo.user_name}}
+  </li>
+</ul>
+
+<br>
+<br>
+
+<ul>
+  <li *ngFor = "let show of groupRankings">
+    <div>{{show.title}}</div>
+    <div>{{show.score}}</div>
+    <br>
   </li>
 </ul>
 

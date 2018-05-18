@@ -23,7 +23,7 @@ export class LoginComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
-        this.router.navigateByUrl('/');
+        return this.router.navigateByUrl('/');
       })
       .catch((err) => {
         console.log(err);

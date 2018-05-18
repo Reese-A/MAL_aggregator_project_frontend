@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ export class RegisterComponent {
     email: '',
   };
 
-  constructor(private registerService: RegisterService) {
+  constructor(private registerService: RegisterService, private router: Router) {
 
   }
 
@@ -23,6 +24,7 @@ export class RegisterComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
+        return this.router.navigateByUrl('/login');
       })
       .catch((err) => {
         console.log(err);
