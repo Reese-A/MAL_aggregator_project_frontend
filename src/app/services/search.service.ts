@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
   constructor(private http: HttpClient) { }
 
+
   getData(username) {
     console.log('Searching');
     console.log(username);

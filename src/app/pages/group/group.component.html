@@ -2,18 +2,23 @@
 
 
 <ul>MAL users in my group:
-  <li *ngFor = "let user of usersData">
-    {{user.myanimelist.myinfo.user_name}}
+  <li *ngFor = "let name of userNames">
+    {{name}}
   </li>
 </ul>
 
 <br>
 <br>
 
+
+
 <ul>
-  <li *ngFor = "let show of groupRankings">
-    <div>{{show.title}}</div>
-    <div>{{show.score}}</div>
+  <li *ngFor = "let show of showsTitles">
+    <img src="{{groupShows[show].image}}" alt="">
+    <div>{{groupShows[show].title}}</div>
+    <div>{{groupShows[show].score}}</div>
+    <div>{{groupShows[show].groupScore}}</div>
+    <div>{{groupShows[show].usersCounts}}</div>
     <br>
   </li>
 </ul>
