@@ -28,7 +28,7 @@ export class HomeComponent {
     this.groupService.addToGroup(user)
     .toPromise()
     .then((data) => {
-      console.log(data);
+      return console.log(data);
     })
     .catch((err) => {
       console.log(err);

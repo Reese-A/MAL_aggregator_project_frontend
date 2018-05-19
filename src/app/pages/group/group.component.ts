@@ -48,26 +48,48 @@ export class GroupComponent {
 
             .then((data) => {
               let userShows = [];
-              const showTitles = [];
-              const groupRankings = [];
-              const groupSeries = [];
+              // const showTitles = [];
+              // const groupRankings = [];
+              // const groupSeries = [];
+              const shows = {};
               for (let i = 0; i < this.usersSeries.length; i++) {
                 for (let j = 0; j < this.usersSeries[i].length; j++) {
                   userShows = Object.values(this.usersSeries[i][j]);
-                  const show = {};
-                  show['title'] = userShows[1];
-                  show['score'] = userShows[13];
-                  showTitles.push(userShows[1]);
-                  groupRankings.push(show);
-                  groupSeries.push(this.usersSeries[i][j]);
+                  console.log(userShows);
+                  if (shows.hasOwnProperty(userShows[1])) {
+                    shows[userShows[1]].totalScore += Number(userShows[13]);
+                    shows[userShows[1]].userCount++;
+                  } else {
+                    shows[userShows[1]] = {
+                      score: Number(userShows[13]),
+                      watched_episodes: userShows[10],
+                      image: userShows[8],
+                      totalScore: Number(userShows[13]),
+                      userCount: 1
+                    };
+                  }
+                  // show[userShows[1]] = {
+                  //   score: userShows[13],
+                  //   watched_episodes: userShows[10],
+                  //   image: userShows[8]
+                  // };
+                  // show['title'] = userShows[1];
+                  // show['score'] = userShows[13];
+                  // show['watched_episodes'] = userShows[10];
+                  // show['image'] = userShows[8];
+                  // showTitles.push(userShows[1]);
+                  // groupRankings.push(show);
+                  // groupSeries.push(this.usersSeries[i][j]);
                 }
               }
+              console.log('Shows: ', shows);
+              console.log('Length: ', Object.keys(shows).length);
               // this.groupSeries.indexOf(Object.)
-              console.log('Titles: ', showTitles);
+              // console.log('Titles: ', showTitles);
               // console.log('User Shows: ', userShows);
-              console.log('Group Rankings: ', groupRankings);
-              console.log('Group Series: ', groupSeries);
-              return showTitles;
+              // console.log('Group Rankings: ', groupRankings);
+              // console.log('Group Series: ', groupSeries);
+              return shows;
             })
 
             .catch((err) => {
