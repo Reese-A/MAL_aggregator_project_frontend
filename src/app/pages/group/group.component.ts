@@ -11,15 +11,12 @@ export class GroupComponent {
   userNames: any;
   usersData: Object[];
   usersSeries: any;
-  // groupSeries: Object[];
-  // groupRankings: Object[];
+
 
   constructor(private groupService: GroupService, private searchService: SearchService) {
     this.userNames = [];
     this.usersData = [];
     this.usersSeries = [];
-    // this.groupSeries = [];
-    // this.groupRankings = [];
 
     this.groupService.getGroup() // promise all
 
@@ -55,7 +52,7 @@ export class GroupComponent {
               for (let i = 0; i < this.usersSeries.length; i++) {
                 for (let j = 0; j < this.usersSeries[i].length; j++) {
                   userShows = Object.values(this.usersSeries[i][j]);
-                  console.log(userShows);
+                  // console.log(userShows);
                   if (shows.hasOwnProperty(userShows[1])) {
                     shows[userShows[1]].totalScore += Number(userShows[13]);
                     shows[userShows[1]].userCount++;
@@ -68,6 +65,7 @@ export class GroupComponent {
                       userCount: 1
                     };
                   }
+                  shows[userShows[1]].groupScore = Number(shows[userShows[1]].totalScore / shows[userShows[1]].userCount).toPrecision(3);
                   // show[userShows[1]] = {
                   //   score: userShows[13],
                   //   watched_episodes: userShows[10],
@@ -83,7 +81,6 @@ export class GroupComponent {
                 }
               }
               console.log('Shows: ', shows);
-              console.log('Length: ', Object.keys(shows).length);
               // this.groupSeries.indexOf(Object.)
               // console.log('Titles: ', showTitles);
               // console.log('User Shows: ', userShows);
