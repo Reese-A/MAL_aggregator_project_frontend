@@ -11,9 +11,10 @@ export class LoginComponent {
     username: '',
     password: ''
   };
+  error: boolean;
 
   constructor(private loginService: LoginService, private router: Router) {
-
+    this.error = false;
   }
 
   submit(e) {
@@ -26,6 +27,7 @@ export class LoginComponent {
         return this.router.navigateByUrl('/group');
       })
       .catch((err) => {
+        this.error = true;
         console.log(err);
       });
   }
