@@ -26,4 +26,9 @@ export class GroupService {
   addToGroup(data) {
     return this.http.post('/api/groups', data);
   }
+
+  removeUser(name) {
+    console.log(name);
+    return this.http.delete('/api/groups/' + name);
+  }
 }

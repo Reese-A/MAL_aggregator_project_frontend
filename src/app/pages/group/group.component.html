@@ -1,9 +1,11 @@
 <h1 id="groupHeader">My Group</h1>
 
+<a routerLink="/" id="homeRedirect">Return to search page</a>
 
 <ul>MAL users in my group:
   <li *ngFor = "let name of userNames">
     {{name}}
+    <button (click)="removeUser(name)">X</button>
   </li>
 </ul>
 

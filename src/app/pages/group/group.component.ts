@@ -93,8 +93,10 @@ export class GroupComponent {
           for (let j = 0; j < this.usersSeries[i].length; j++) {
             userShows = Object.values(this.usersSeries[i][j]);
             if (shows.hasOwnProperty(userShows[1])) {
+              if (Number(userShows[13]) > 0) {
               shows[userShows[1]].totalScore += Number(userShows[13]);
               shows[userShows[1]].userCount++;
+              }
             } else {
               shows[userShows[1]] = {
                 title: userShows[1],
@@ -119,5 +121,16 @@ export class GroupComponent {
       });
   }
 
+  removeUser(name) {
+    console.log(name);
+    this.groupService.removeUser(name)
+    .toPromise()
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
 }
