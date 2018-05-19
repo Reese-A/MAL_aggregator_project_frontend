@@ -92,27 +92,38 @@ export class GroupComponent {
         for (let i = 0; i < this.usersSeries.length; i++) {
           for (let j = 0; j < this.usersSeries[i].length; j++) {
             userShows = Object.values(this.usersSeries[i][j]);
-            if (shows.hasOwnProperty(userShows[1])) {
-              if (Number(userShows[13]) > 0) {
-              shows[userShows[1]].totalScore += Number(userShows[13]);
-              shows[userShows[1]].userCount++;
+            if (userShows[14] === '2' && Number(userShows[13]) > 0) {
+              if (shows.hasOwnProperty(userShows[1])) {
+                  shows[userShows[1]].totalScore += Number(userShows[13]);
+                  shows[userShows[1]].userCount++;
+              } else {
+                shows[userShows[1]] = {
+                  title: userShows[1],
+                  score: Number(userShows[13]),
+                  watched_episodes: userShows[10],
+                  image: userShows[8],
+                  totalScore: Number(userShows[13]),
+                  userCount: 1,
+                  groupScore: 0
+                };
               }
-            } else {
-              shows[userShows[1]] = {
-                title: userShows[1],
-                score: Number(userShows[13]),
-                watched_episodes: userShows[10],
-                image: userShows[8],
-                totalScore: Number(userShows[13]),
-                userCount: 1
-              };
+              shows[userShows[1]].groupScore = Number(shows[userShows[1]].totalScore / shows[userShows[1]].userCount).toPrecision(3);
             }
-            shows[userShows[1]].groupScore = Number(shows[userShows[1]].totalScore / shows[userShows[1]].userCount).toPrecision(3);
           }
         }
-        // console.log('Shows: ', shows);
-        this.showsTitles = Object.keys(shows);
-        // console.log('titles: ', this.showsTitles);
+        console.log('Shows: ', shows);
+        const unsortedTitles = Object.keys(shows);
+        console.log(unsortedTitles);
+        this.showsTitles = unsortedTitles.sort(function compare(a, b) {
+          if (Number(shows[a]['userCount']) > Number(shows[b]['userCount'])) {
+            return -1;
+          }
+          if (Number(shows[a]['userCount']) < Number(shows[b]['userCount'])) {
+            return 1;
+          }
+          return 0;
+        });
+        console.log('titles: ', this.showsTitles);
         return this.groupShows = shows;
       })
 
@@ -124,13 +135,13 @@ export class GroupComponent {
   removeUser(name) {
     console.log(name);
     this.groupService.removeUser(name)
-    .toPromise()
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .toPromise()
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
 }
