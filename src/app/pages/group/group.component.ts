@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GroupService } from '../../services/group.service';
-import { SearchService } from '../../services/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './group.component.html',
@@ -13,7 +13,7 @@ export class GroupComponent {
   groupShows: Object;
   showsTitles: Object[];
 
-  constructor(private groupService: GroupService, private searchService: SearchService) {
+  constructor(private groupService: GroupService, private router: Router) {
     this.userNames = [];
     this.usersSeries = [];
     this.groupShows = {};
@@ -32,47 +32,6 @@ export class GroupComponent {
         const promises = [];
         names.forEach((username) => {
           promises.push(this.groupService.getGroupData(username));
-          // this.searchService.getData(username)
-
-          // .toPromise()
-          // .then((data) => {
-          //   this.usersData.push(data);
-          //   this.usersSeries = this.usersData.map(function (user) {
-          //       return user['myanimelist']['anime'];
-          //     });
-          //   })
-
-          //   .then((data) => {
-          //     let userShows = [];
-          //     const shows = {};
-          //     for (let i = 0; i < this.usersSeries.length; i++) {
-          //       for (let j = 0; j < this.usersSeries[i].length; j++) {
-          //         userShows = Object.values(this.usersSeries[i][j]);
-          //         if (shows.hasOwnProperty(userShows[1])) {
-          //           shows[userShows[1]].totalScore += Number(userShows[13]);
-          //           shows[userShows[1]].userCount++;
-          //         } else {
-          //           shows[userShows[1]] = {
-          //             title: userShows[1],
-          //             score: Number(userShows[13]),
-          //             watched_episodes: userShows[10],
-          //             image: userShows[8],
-          //             totalScore: Number(userShows[13]),
-          //             userCount: 1
-          //           };
-          //         }
-          //         shows[userShows[1]].groupScore = Number(shows[userShows[1]].totalScore / shows[userShows[1]].userCount).toPrecision(3);
-          //       }
-          //     }
-          //     console.log('Shows: ', shows);
-          //     this.showsTitles = Object.keys(shows);
-          //     console.log('titles: ', this.showsTitles);
-          //     return this.groupShows = shows;
-          //   })
-
-          //   .catch((err) => {
-          //     console.log(err);
-          // });
         });
         return promises;
       })
@@ -87,34 +46,33 @@ export class GroupComponent {
 
       .then((data) => {
         // console.log('HERE: ', data);
-        let userShows = [];
+        // let userShows = [];
         const shows = {};
         for (let i = 0; i < this.usersSeries.length; i++) {
           for (let j = 0; j < this.usersSeries[i].length; j++) {
-            userShows = Object.values(this.usersSeries[i][j]);
-            if (userShows[14] === '2' && Number(userShows[13]) > 0) {
-              if (shows.hasOwnProperty(userShows[1])) {
-                  shows[userShows[1]].totalScore += Number(userShows[13]);
-                  shows[userShows[1]].userCount++;
+            const currentShow = this.usersSeries[i][j];
+            if (currentShow['my_status'] === '2' && Number(currentShow['my_score']) > 0) {
+              if (shows.hasOwnProperty(currentShow['series_title'])) {
+                shows[currentShow['series_title']].totalScore += Number(currentShow['my_score']);
+                shows[currentShow['series_title']].userCount++;
               } else {
-                shows[userShows[1]] = {
-                  title: userShows[1],
-                  score: Number(userShows[13]),
-                  watched_episodes: userShows[10],
-                  image: userShows[8],
-                  totalScore: Number(userShows[13]),
+                shows[currentShow['series_title']] = {
+                  title: currentShow['series_title'],
+                  score: Number(currentShow['my_score']),
+                  watched_episodes: currentShow['my_watched_episodes'],
+                  image: currentShow['series_image'],
+                  totalScore: Number(currentShow['my_score']),
                   userCount: 1,
                   groupScore: 0
                 };
               }
-              shows[userShows[1]].groupScore = Number(shows[userShows[1]].totalScore / shows[userShows[1]].userCount).toPrecision(3);
+              // tslint:disable-next-line:max-line-length
+              shows[currentShow['series_title']].groupScore = Number(shows[currentShow['series_title']].totalScore / shows[currentShow['series_title']].userCount).toPrecision(3);
             }
           }
         }
-        console.log('Shows: ', shows);
-        const unsortedTitles = Object.keys(shows);
-        console.log(unsortedTitles);
-        this.showsTitles = unsortedTitles.sort(function compare(a, b) {
+        // console.log('Shows: ', shows);
+        this.showsTitles = Object.keys(shows).sort(function compare(a, b) {
           if (Number(shows[a]['userCount']) > Number(shows[b]['userCount'])) {
             return -1;
           }
@@ -123,7 +81,6 @@ export class GroupComponent {
           }
           return 0;
         });
-        console.log('titles: ', this.showsTitles);
         return this.groupShows = shows;
       })
 
@@ -138,6 +95,7 @@ export class GroupComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
+        return window.location.reload();
       })
       .catch((err) => {
         console.log(err);
