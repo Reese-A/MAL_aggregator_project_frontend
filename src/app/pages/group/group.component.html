@@ -1,11 +1,12 @@
 <app-logout></app-logout>
 
+<div id="headerWrap">
 <h1 id="groupHeader">My Group</h1>
-
 <a routerLink="/" id="homeRedirect">Return to search page</a>
+</div>
 
 <ul>MAL users in my group:
-  <li *ngFor = "let name of userNames">
+  <li *ngFor="let name of userNames">
     {{name}}
     <button (click)="removeUser(name)">X</button>
   </li>
@@ -13,11 +14,12 @@
 
 <br>
 <br>
-
-
+<div id="scrollWrap">
+  <div (click)="scrollUp()" id="scrollButton">Return to page top</div>
+</div>
 
 <ul>
-  <li *ngFor = "let show of showsTitles">
+  <li *ngFor="let show of showsTitles">
     <img src="{{groupShows[show].image}}" alt="">
     <div>{{groupShows[show].title}}</div>
     <!-- <div>{{groupShows[show].score}}</div> -->
@@ -26,4 +28,3 @@
     <br>
   </li>
 </ul>
-

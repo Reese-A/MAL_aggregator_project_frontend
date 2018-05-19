@@ -102,4 +102,8 @@ export class GroupComponent {
       });
   }
 
+  scrollUp() {
+    return window.scrollTo(0, 0);
+  }
+
 }
