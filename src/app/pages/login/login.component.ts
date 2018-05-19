@@ -19,7 +19,6 @@ export class LoginComponent {
 
   submit(e) {
     e.preventDefault();
-    console.log(e);
     this.loginService.loginUser(this.userData)
       .toPromise()
       .then((data) => {
