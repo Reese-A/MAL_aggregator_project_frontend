@@ -16,9 +16,9 @@
   <li *ngFor = "let show of showsTitles">
     <img src="{{groupShows[show].image}}" alt="">
     <div>{{groupShows[show].title}}</div>
-    <div>{{groupShows[show].score}}</div>
-    <div>{{groupShows[show].groupScore}}</div>
-    <div>{{groupShows[show].usersCounts}}</div>
+    <!-- <div>{{groupShows[show].score}}</div> -->
+    <div>Group score: {{groupShows[show].groupScore}}</div>
+    <div># of users who watched this show: {{groupShows[show].userCount}}</div>
     <br>
   </li>
 </ul>

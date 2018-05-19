@@ -80,7 +80,6 @@ export class GroupComponent {
         return Promise.all(promises);
       })
       .then((data) => {
-        console.log('DATA: ', data);
         return this.usersSeries = data.map(function (user) {
           return user['myanimelist']['anime'];
         });
