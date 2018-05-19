@@ -9,11 +9,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { GroupComponent } from './pages/group/group.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 import { SearchService } from './services/search.service';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
 import { GroupService } from './services/group.service';
+import { LogoutService } from './services/logout.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { GroupService } from './services/group.service';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    GroupComponent
+    GroupComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { GroupService } from './services/group.service';
       { enableTracing: true }
     ),
   ],
-  providers: [SearchService, RegisterService, LoginService, GroupService],
+  providers: [SearchService, RegisterService, LoginService, GroupService, LogoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
