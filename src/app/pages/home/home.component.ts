@@ -64,6 +64,11 @@ export class HomeComponent {
       })
       .catch((err) => {
         console.log(err);
+        return this.hasData = false;
       });
+  }
+
+  scrollUp() {
+    return window.scrollTo(0, 0);
   }
 }
