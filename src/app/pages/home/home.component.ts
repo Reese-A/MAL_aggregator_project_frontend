@@ -18,7 +18,7 @@ export class HomeComponent {
   hasData: boolean;
 
   constructor(private searchService: SearchService, private groupService: GroupService) {
-    this.title = 'MAL Ratings Aggregator' || '';
+    this.title = 'Our Anime List' || '';
     this.hasData = null;
   }
 
