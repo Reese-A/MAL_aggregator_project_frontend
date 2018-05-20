@@ -1,17 +1,13 @@
-#scrollWrap {
-  display: flex;
-  width: 90%;
-  justify-content: flex-end;
-  align-items: flex-end;
-  #scrollButton {
-    width: 50px;
-    background-color: lightcyan;
-    opacity: 0.75;
-    padding: 5px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    position: fixed;
-  }
+#scrollButton {
+  width: 50px;
+  background-color: lightcyan;
+  opacity: 0.75;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
 }
 
 #headerWrap {
@@ -20,38 +16,129 @@
   align-items: center;
   #groupHeader {
     font-size: 23px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 30px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 40px;
+    }
   }
   #homeRedirect {
     text-decoration: none;
     color: blue;
     margin-bottom: 20px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 20px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 25px;
+    }
+  }
+  #usersBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: lightgray;
+    border: 1px solid grey;
+    @media only screen and (min-width: 1025px) {
+      width: 65%;
+    }
+    #boxInfo {
+      text-align: center;
+      width: 100%;
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        font-size: 25px;
+      }
+      @media only screen and (min-width: 1025px) {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+    }
+    .nameCard {
+      width: 32%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        width: 20%
+      }
+      @media only screen and (min-width: 1025px) {
+        width: 18%;
+      }
+      .userNames {
+        font-size: 11px;
+        margin-bottom: 3px;
+        list-style-type: none;
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          font-size: 20px;
+        }
+        @media only screen and (min-width: 1025px) {
+          font-size: 23px;
+          margin-bottom: 8px;
+        }
+      }
+      .removeButton {
+        display: inline;
+        font-size: 10px;
+        color: crimson;
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          font-size: 13px;
+        }
+        @media only screen and (min-width: 1025px) {
+          font-size: 17px;
+        }
+      }
+    }
   }
 }
 
-#usersBox {
+#groupCardWrap {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  border: 1px solid grey;
-
-  #boxInfo{
+  flex-wrap: wrap;
+  .groupCard {
+    padding: 3px 3px 3px;
+    width: 29%;
+    margin-bottom: 15px;
+    font-size: 13px;
     text-align: center;
-    width: 100%;
-  }
-
-  .nameCard {
-    width: 30%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    .userNames {
-      font-size: 10px;
-      list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 2px #6E6B6A;
+    border: 1px ridge blue;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      padding: 8px 8px 5px;
+      width: 21%;
+      font-size: 18px;
+      box-shadow: 4px 4px 3px #6E6B6A;
+      border: 3px ridge blue;
     }
-    .removeButton {
-      font-size: 10px;
-      color: crimson;
+    @media only screen and (min-width: 1025px) {
+      padding: 10px 10px 5px;
+      width: 17%;
+      font-size: 22px;
+      box-shadow: 5px 5px 5px #6E6B6A;
+      border: 5px ridge blue;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+    .groupTitle {
+      width: 100%;
+      font-size: 2vh;
+      overflow-wrap: break-word;
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        width: 80%;
+        font-size: 2vh;
+      }
+      @media only screen and (min-width: 1025px) {
+        font-size: 3vh;
+      }
     }
   }
 }

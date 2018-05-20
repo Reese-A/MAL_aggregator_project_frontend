@@ -148,25 +148,26 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   .userCard {
+    padding: 3px 3px 3px;
     width: 29%;
     margin-bottom: 15px;
     font-size: 13px;
     text-align: center;
     display: flex;
-    padding: 3px;
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px #6E6B6A;
     border: 1px ridge red;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      padding: 8px;
-      width: 22%;
+      padding: 8px 8px 5px;
+      width: 21%;
       font-size: 18px;
       box-shadow: 4px 4px 3px #6E6B6A;
       border: 3px ridge red;
     }
     @media only screen and (min-width: 1025px) {
-      width: 18%;
+      padding: 10px 10px 5px;
+      width: 17%;
       font-size: 22px;
       box-shadow: 5px 5px 5px #6E6B6A;
       border: 5px ridge red;
@@ -177,12 +178,15 @@
       margin-bottom: 5px;
     }
     .userTitle {
-      font-size: 4vw;
+      width: 100%;
+      font-size: 2vh;
+      overflow-wrap: break-word;
       @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-        font-size: 3vw;
+        width: 80%;
+        font-size: 2vh;
       }
       @media only screen and (min-width: 1025px) {
-        font-size: 2vw;
+        font-size: 3vh;
       }
     }
   }
