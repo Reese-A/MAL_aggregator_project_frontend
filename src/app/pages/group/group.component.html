@@ -1,16 +1,22 @@
 <app-logout></app-logout>
 
 <div id="headerWrap">
-<h1 id="groupHeader">My Group</h1>
-<a routerLink="/" id="homeRedirect">Return to search page</a>
+  <h1 id="groupHeader">My Group</h1>
+  <a routerLink="/" id="homeRedirect">Return to search page</a>
 </div>
 
-<ul>MAL users in my group:
-  <li *ngFor="let name of userNames">
-    {{name}}
-    <button (click)="removeUser(name)">X</button>
-  </li>
-</ul>
+
+<div id="usersBox">
+  <div id="boxInfo">
+    MAL users in group:
+  </div>
+  <div *ngFor="let name of userNames" class="nameCard">
+    <li class="userNames">
+      {{name}}
+      <button (click)="removeUser(name)" class="removeButton">X</button>
+    </li>
+  </div>
+</div>
 
 <br>
 <br>
@@ -18,13 +24,12 @@
   <div (click)="scrollUp()" id="scrollButton">Return to page top</div>
 </div>
 
-<ul>
-  <li *ngFor="let show of showsTitles">
+<div id="groupCardWrap">
+  <div *ngFor="let show of showsTitles" class="groupCard">
     <img src="{{groupShows[show].image}}" alt="">
-    <div>{{groupShows[show].title}}</div>
-    <!-- <div>{{groupShows[show].score}}</div> -->
-    <div>Group score: {{groupShows[show].groupScore}}</div>
-    <div># of users who watched this show: {{groupShows[show].userCount}}</div>
+    <div class="groupTitle">{{groupShows[show].title}}</div>
+    <div class="groupScore">Group score: {{groupShows[show].groupScore}}</div>
+    <div class="groupCount"># of users who watched this show: {{groupShows[show].userCount}}</div>
     <br>
-  </li>
-</ul>
+  </div>
+</div>

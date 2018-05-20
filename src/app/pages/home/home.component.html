@@ -18,7 +18,7 @@
 </div>
 
 <a routerLink="/group" id="groupLinkWrapper">
-<div id="myGroup">View my group</div>
+  <div id="myGroup">View my group</div>
 </a>
 
 <form id="searchForm">
@@ -33,18 +33,18 @@
 
 <h3 *ngIf="hasData === false" id="invalidUser">Could not find MAL user with that name, or their list is not public</h3>
 <div *ngIf="hasData === true" id="userWrapper">
-<div id="userNameHeader">Displaying list for MAL user</div>
-<div id="userName">{{user.name}}</div>
-<button (click)="addUser()" id="addUserButton">Add user to my group</button>
+  <div id="userNameHeader">Displaying list for MAL user</div>
+  <div id="userName">{{user.name}}</div>
+  <button (click)="addUser()" id="addUserButton">Add user to my group</button>
 </div>
 
 
 <div *ngIf="hasData === true" id="userCardWrapper">
   <div *ngFor="let show of userSeries" class="userCard">
     <img src="{{show.series_image}}" alt="">
-    <div class="userTitle">{{show.series_title}}</div>
-    <div class="userScore"> Score: {{show.my_score}}</div>
-    <div class="userEpisodes"> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
+      <div class="userTitle">{{show.series_title}}</div>
+      <div class="userScore"> Score: {{show.my_score}}</div>
+      <div class="userEpisodes"> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
+      </div>
     </div>
   </div>
-</div>
