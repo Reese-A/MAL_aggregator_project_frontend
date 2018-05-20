@@ -48,11 +48,12 @@
 <div *ngIf="hasData === true" id="userCardWrapper">
   <div *ngFor="let show of userSeries" class="userCard">
     <img src="{{show.series_image}}" alt="">
-      <div class="userTitle">{{show.series_title}}</div>
-      <div class="userScore"> Score: {{show.my_score}}</div>
-      <div class="userEpisodes"> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
-      </div>
+    <div class="userTitle">{{show.series_title}}</div>
+    <div class="userScore"> Score: {{show.my_score}}</div>
+    <div class="userEpisodes"> Episodes watched: {{show.my_watched_episodes}}/{{show.series_episodes}}
     </div>
   </div>
+</div>
 
-  <div (click)="scrollUp()" id="scrollButton">Return to page top</div>
+<img src="../../../assets/Actions-go-up-icon-tiny.png" (click)="scrollUp()" id="scrollButton"
+  alt="">
