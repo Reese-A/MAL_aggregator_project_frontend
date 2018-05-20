@@ -8,4 +8,6 @@
   <div *ngIf="error === true" id="loginError">Invalid username or password</div>
   <button (click)="submit($event)" id="loginButton">Submit</button>
 </form>
-<div routerLink="/" id="loginRouter">Return to home page</div>
+<a id="loginLinkWrap">
+  <div routerLink="/" id="loginRouter">Return to home page</div>
+</a>

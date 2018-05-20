@@ -14,24 +14,63 @@
   justify-content: center;
   #loginHead {
     color: crimson;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 30px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 35px;
+    }
   }
   #loginName {
     @include input();
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      height: 25px;
+      font-size: 20px;
+    }
+    @media only screen and (min-width: 1025px) {
+      height: 30px;
+      font-size: 24px;
+    }
   }
   #loginPassword {
     @include input();
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      height: 25px;
+      font-size: 20px;
+    }
+    @media only screen and (min-width: 1025px) {
+      height: 30px;
+      font-size: 24px;
+    }
   }
   #loginButton {
     border-radius: 5px;
     background-color: lightblue;
     box-shadow: 1px 1px #6E6B6A;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width:10%;
+      height: 30px;
+      font-size: 15px;
+    }
+    @media only screen and (min-width: 1025px) {
+      height: 30px;
+      font-size: 20px;
+    }
   }
 }
 
-#loginRouter {
-  width: 100%;
-  text-align: center;
-  color: blue;
-  font-size: 18px;
-  text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
+#loginLinkWrap {
+  display: flex;
+  justify-content: center;
+  #loginRouter {
+    color: blue;
+    font-size: 18px;
+    text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 23px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 26px;
+    }
+  }
 }
