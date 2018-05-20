@@ -12,16 +12,21 @@ export class GroupComponent {
   usersSeries: any;
   groupShows: Object;
   showsTitles: Object[];
+  loading: boolean;
 
   constructor(private groupService: GroupService, private router: Router) {
     this.userNames = [];
     this.usersSeries = [];
     this.groupShows = {};
     this.showsTitles = [];
+    this.loading = true;
 
     this.groupService.getGroup()
       .toPromise()
       .then((data: Array<any>) => {
+        if (data['message'] === 'Please sign in') {
+          this.loading = false;
+        }
         this.userNames = data.map(function (user) {
           return user.name;
         });
@@ -81,6 +86,7 @@ export class GroupComponent {
           }
           return 0;
         });
+        this.loading = false;
         return this.groupShows = shows;
       })
 

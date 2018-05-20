@@ -21,14 +21,19 @@
 <br>
 <br>
 
-<div id="groupCardWrap">
-  <div *ngFor="let show of showsTitles" class="groupCard">
-    <img src="{{groupShows[show].image}}" alt="">
-    <div class="groupTitle">{{groupShows[show].title}}</div>
-    <div class="groupScore">Group score: {{groupShows[show].groupScore}}</div>
-    <div class="groupCount"># of users who watched this show: {{groupShows[show].userCount}}</div>
-    <br>
+<div *ngIf="loading ===true" id="loader">
+  Now Loading...
+  <img src="https://orig00.deviantart.net/10e3/f/2011/355/3/5/goku_charge_by_arestwinblade-d4jrtc0.gif" alt="">
   </div>
-</div>
+
+  <div id="groupCardWrap">
+    <div *ngFor="let show of showsTitles" class="groupCard">
+      <img src="{{groupShows[show].image}}" alt="">
+      <div class="groupTitle">{{groupShows[show].title}}</div>
+      <div class="groupScore">Group score: {{groupShows[show].groupScore}}</div>
+      <div class="groupCount"># of users who watched this show: {{groupShows[show].userCount}}</div>
+      <br>
+    </div>
+  </div>
 
   <img src="../../../assets/Actions-go-up-icon-tiny.png" (click)="scrollUp()" id="scrollButton">
