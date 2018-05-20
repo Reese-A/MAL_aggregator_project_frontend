@@ -1,12 +1,11 @@
-<h3 id = "loginHead">Login as existing user</h3>
-<br>
-<form id = "loginForm">
-  <input type="text" name="username" placeholder="Username" [(ngModel)]="userData.username" id = "loginName">
+<form id="loginForm">
+  <h3 id="loginHead">Login as existing user</h3>
   <br>
-  <input type="password" name="password" placeholder="Password" [(ngModel)]="userData.password" id = "loginPassword">
+  <input type="text" name="username" placeholder="Username" [(ngModel)]="userData.username" id="loginName">
   <br>
-  <div *ngIf="error === true" id = "loginError">Invalid username or password</div>
-  <button (click)="submit($event)" id = "loginButton">Submit</button>
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="userData.password" id="loginPassword">
+  <br>
+  <div *ngIf="error === true" id="loginError">Invalid username or password</div>
+  <button (click)="submit($event)" id="loginButton">Submit</button>
 </form>
-<br>
-<a routerLink = "/" id = "loginRouter">Return to home page</a>
+<div routerLink="/" id="loginRouter">Return to home page</div>

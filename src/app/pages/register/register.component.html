@@ -1,13 +1,15 @@
-<h3>Register new user</h3>
-<br>
-<form>
-  <input type="text" name="username" placeholder="Username" [(ngModel)]="userData.username">
+<form id="registerForm">
+  <h3 id="registerHead">Register new user</h3>
   <br>
-  <input type="text" name="email" placeholder="Email" [(ngModel)]="userData.email">
+  <input type="text" name="username" placeholder="Username" [(ngModel)]="userData.username" id="registerName">
   <br>
-  <input type="text" name="password" placeholder="Password" [(ngModel)]="userData.password">
+  <input type="text" name="email" placeholder="Email" [(ngModel)]="userData.email" id="registerEmail">
   <br>
-  <button (click)="submit($event)">Submit</button>
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="userData.password" id="registerPassword">
+  <br>
+  <input type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="userData.confirm" id="registerConfirm">
+  <br>
+  <button (click)="submit($event)" id="registerButton">Submit</button>
 </form>
 <br>
-<a routerLink="/">Return to home page</a>
+<div routerLink="/" id="registerRouter">Return to home page</div>

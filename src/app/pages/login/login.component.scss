@@ -1,12 +1,37 @@
-#loginHead {
-  width:100%;
+@mixin input() {
+  height: 20px;
+  border-radius: 5px;
   text-align: center;
-  color: crimson;
+  font-size: 15px;
 }
 
-#loginForm{
+#loginForm {
   width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  #loginHead {
+    color: crimson;
+  }
+  #loginName {
+    @include input();
+  }
+  #loginPassword {
+    @include input();
+  }
+  #loginButton {
+    border-radius: 5px;
+    background-color: lightblue;
+    box-shadow: 1px 1px #6E6B6A;
+  }
+}
+
+#loginRouter {
+  width: 100%;
+  text-align: center;
+  color: blue;
+  font-size: 18px;
+  text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
 }
