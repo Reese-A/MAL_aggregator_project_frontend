@@ -184,12 +184,14 @@
     align-items: center;
     box-shadow: 2px 2px 2px black;
     border: 1px ridge crimson;
+    border-radius: 5px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
       padding: 8px 8px 5px;
       width: 21%;
       font-size: 18px;
       box-shadow: 4px 4px 3px black;
       border: 3px ridge crimson;
+      border-radius: 8px;
     }
     @media only screen and (min-width: 1025px) {
       padding: 10px 10px 5px;
@@ -197,6 +199,7 @@
       font-size: 22px;
       box-shadow: 5px 5px 5px black;
       border: 5px ridge crimson;
+      border-radius: 10px;
     }
     img {
       width: 100%;
