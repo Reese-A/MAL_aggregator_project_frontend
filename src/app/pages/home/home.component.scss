@@ -20,6 +20,7 @@
   a {
     margin: 0px 15px;
     text-decoration: none;
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
     color: blue;
     font-size: 20px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -37,6 +38,7 @@
   margin-top: 15px;
   text-decoration: none;
   #myGroup {
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
     color: blue;
     font-size: 20px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -60,6 +62,7 @@
     margin-top: 150px;
   }
   #homeInfo {
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
     text-align: center;
     font-size: 20px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -105,6 +108,7 @@
 }
 
 #invalidUser {
+  text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
   color: red;
   text-align: center;
 }
@@ -115,6 +119,7 @@
   align-items: center;
   margin-bottom: 30px;
   #userNameHeader {
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
     text-align: center;
     font-size: 20px;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -125,6 +130,7 @@
     }
   }
   #userName {
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
     text-align: center;
     font-size: 30px;
     margin-bottom: 15px;
@@ -148,6 +154,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   .userCard {
+    background-color: rgba(135, 206, 235, 0.7);
     padding: 3px 3px 3px;
     width: 29%;
     margin-bottom: 15px;
@@ -156,21 +163,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 2px #6E6B6A;
-    border: 1px ridge red;
+    box-shadow: 2px 2px 2px black;
+    border: 1px ridge crimson;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
       padding: 8px 8px 5px;
       width: 21%;
       font-size: 18px;
-      box-shadow: 4px 4px 3px #6E6B6A;
-      border: 3px ridge red;
+      box-shadow: 4px 4px 3px black;
+      border: 3px ridge crimson;
     }
     @media only screen and (min-width: 1025px) {
       padding: 10px 10px 5px;
       width: 17%;
       font-size: 22px;
-      box-shadow: 5px 5px 5px #6E6B6A;
-      border: 5px ridge red;
+      box-shadow: 5px 5px 5px black;
+      border: 5px ridge crimson;
     }
     img {
       width: 100%;
