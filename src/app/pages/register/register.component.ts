@@ -13,9 +13,10 @@ export class RegisterComponent {
     email: '',
     confirm: '',
   };
+  error: boolean;
 
   constructor(private registerService: RegisterService, private router: Router) {
-
+    this.error = false;
   }
 
   submit(e) {
@@ -24,6 +25,10 @@ export class RegisterComponent {
     this.registerService.submitUser(this.userData)
       .toPromise()
       .then((data) => {
+        if (data['message'] === 'Passwords much match') {
+          console.log(data);
+          return this.error = true;
+        }
         console.log(data);
         return this.router.navigateByUrl('/login');
       })

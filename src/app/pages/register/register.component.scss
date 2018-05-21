@@ -79,6 +79,14 @@
       font-size: 20px;
     }
   }
+  #registerError {
+    color: red;
+    text-shadow: -1px 0 rgb(186, 193, 196),
+    0 1px rgb(186, 193, 196),
+    1px 0 rgb(186, 193, 196),
+    0 -1px rgb(186, 193, 196);
+    font-size: 25px;
+  }
 }
 
 #registerLinkWrap {

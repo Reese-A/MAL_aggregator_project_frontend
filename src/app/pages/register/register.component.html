@@ -10,7 +10,11 @@
   <input type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="userData.confirm" id="registerConfirm">
   <br>
   <button (click)="submit($event)" id="registerButton">Submit</button>
+  <br>
+  <div *ngIf="error === true" id="registerError">Passwords must match</div>
+  <br>
 </form>
+
 <br>
 <a id="registerLinkWrap">
   <div routerLink="/" id="registerRouter">Return to home page</div>
