@@ -24,8 +24,9 @@
 <div *ngIf="loading ===true" id="loader">
   Now Loading...
   <img src="https://orig00.deviantart.net/10e3/f/2011/355/3/5/goku_charge_by_arestwinblade-d4jrtc0.gif" alt="">
-  </div>
+</div>
 
+<div id="wrapper">
   <div id="groupCardWrap">
     <div *ngFor="let show of showsTitles" class="groupCard">
       <img src="{{groupShows[show].image}}" alt="">
@@ -35,5 +36,6 @@
       <br>
     </div>
   </div>
+</div>
 
-  <img src="../../../assets/Actions-go-up-icon-tiny.png" (click)="scrollUp()" id="scrollButton">
+<img src="../../../assets/Actions-go-up-icon-tiny.png" (click)="scrollUp()" id="scrollButton">

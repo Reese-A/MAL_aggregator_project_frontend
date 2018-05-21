@@ -1,7 +1,6 @@
 #homeTitle {
   font-size: 35px;
-  color: crimson;
-  // text-shadow: -1px 0 1px rgb(186, 193, 196), 0 1px 1px rgb(186, 193, 196), 1px 0 1px rgb(186, 193, 196), 0 -1px 1px rgb(186, 193, 196);
+  color: crimson; // text-shadow: -1px 0 1px rgb(186, 193, 196), 0 1px 1px rgb(186, 193, 196), 1px 0 1px rgb(186, 193, 196), 0 -1px 1px rgb(186, 193, 196);
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     font-size: 45px;
     margin-top: 40px;
@@ -13,8 +12,7 @@
 
 #subtitle {
   font-size: 15px;
-  color: crimson;
-  // text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
+  color: crimson; // text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     font-size: 23px;
     margin-top: 5px;
@@ -166,55 +164,67 @@
   }
 }
 
-#userCardWrapper {
+#wrapper {
+  width:100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  .userCard {
-    background-color: rgba(135, 206, 235, 0.6);
-    padding: 3px 3px 3px;
-    width: 29%;
-    margin-bottom: 15px;
-    font-size: 13px;
-    text-align: center;
+  justify-content: center;
+  #userCardWrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px black;
-    border: 1px ridge crimson;
-    border-radius: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      padding: 8px 8px 5px;
-      width: 21%;
-      font-size: 18px;
-      box-shadow: 4px 4px 3px black;
-      border: 3px ridge crimson;
-      border-radius: 8px;
+      width: 85%
     }
     @media only screen and (min-width: 1025px) {
-      padding: 10px 10px 5px;
-      width: 17%;
-      font-size: 22px;
-      box-shadow: 5px 5px 5px black;
-      border: 5px ridge crimson;
-      border-radius: 10px;
+      width: 75%;
+      justify-content: space-evenly;
     }
-    img {
-      width: 100%;
-      object-fit: cover;
-      margin-bottom: 5px;
-    }
-    .userTitle {
-      width: 100%;
-      font-size: 2vh;
-      overflow-wrap: break-word;
+    .userCard {
+      background-color: rgba(135, 206, 235, 0.6);
+      padding: 3px 3px 3px;
+      width: 45%;
+      margin-bottom: 15px;
+      font-size: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 2px 2px 2px black;
+      border: 1px ridge crimson;
+      border-radius: 5px;
       @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-        width: 80%;
-        font-size: 2vh;
+        padding: 8px 8px 5px;
+        width: 28%;
+        font-size: 18px;
+        box-shadow: 4px 4px 3px black;
+        border: 3px ridge crimson;
+        border-radius: 8px;
       }
       @media only screen and (min-width: 1025px) {
+        padding: 10px 10px 5px;
+        width: 21%;
+        font-size: 22px;
+        box-shadow: 5px 5px 5px black;
+        border: 5px ridge crimson;
+        border-radius: 10px;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 5px;
+      }
+      .userTitle {
+        width: 100%;
         font-size: 3vh;
+        overflow-wrap: break-word;
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          width: 80%;
+          font-size: 3vh;
+        }
+        @media only screen and (min-width: 1025px) {
+          font-size: 3vh;
+        }
       }
     }
   }
