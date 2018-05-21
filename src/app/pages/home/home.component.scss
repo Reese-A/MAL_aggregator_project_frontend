@@ -1,25 +1,27 @@
-#homeTitle {
-  font-size: 35px;
-  color: crimson; // text-shadow: -1px 0 1px rgb(186, 193, 196), 0 1px 1px rgb(186, 193, 196), 1px 0 1px rgb(186, 193, 196), 0 -1px 1px rgb(186, 193, 196);
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    font-size: 45px;
-    margin-top: 40px;
+#titleWrap {
+  text-align: center;
+  #homeTitle {
+    font-size: 35px;
+    color: crimson; // text-shadow: -1px 0 1px rgb(186, 193, 196), 0 1px 1px rgb(186, 193, 196), 1px 0 1px rgb(186, 193, 196), 0 -1px 1px rgb(186, 193, 196);
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 45px;
+      margin-top: 40px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 50px;
+    }
   }
-  @media only screen and (min-width: 1025px) {
-    font-size: 50px;
-  }
-}
-
-#subtitle {
-  font-size: 15px;
-  color: crimson; // text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    font-size: 23px;
-    margin-top: 5px;
-  }
-  @media only screen and (min-width: 1025px) {
-    font-size: 26px;
-    margin-top: 10px;
+  #subtitle {
+    font-size: 15px;
+    color: crimson; // text-shadow: -1px 0 rgb(186, 193, 196), 0 1px rgb(186, 193, 196), 1px 0 rgb(186, 193, 196), 0 -1px rgb(186, 193, 196);
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 23px;
+      margin-top: 5px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 26px;
+      margin-top: 10px;
+    }
   }
 }
 
@@ -165,7 +167,7 @@
 }
 
 #wrapper {
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   #userCardWrapper {
