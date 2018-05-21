@@ -10,7 +10,6 @@
 
 <br>
 
-
 <div id="homeNavWrapper">
   <a routerLink="/login" id="login">
     <div>Login</div>
@@ -32,7 +31,6 @@
 </form>
 
 <br>
-<br>
 
 <h3 *ngIf="hasData === false" id="invalidUser">Could not find MAL user with that name, or their list is not public</h3>
 <div *ngIf="hasData === true" id="userWrapper">
@@ -40,7 +38,6 @@
   <div id="userName">{{user.name}}</div>
   <button (click)="addUser()" id="addUserButton">Add user to my group</button>
 </div>
-
 
 <div *ngIf="hasData === true" id="wrapper">
   <div id="userCardWrapper">
