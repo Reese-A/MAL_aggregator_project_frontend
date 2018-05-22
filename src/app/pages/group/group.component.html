@@ -10,7 +10,7 @@
     <div *ngFor="let name of userNames" class="nameCard">
       <li class="userNames">
         {{name}}
-        <div (click)="removeUser(name)" class="removeButton">X</div>
+        <a (click)="removeUser(name)" class="removeButton">X</a>
       </li>
     </div>
   </div>

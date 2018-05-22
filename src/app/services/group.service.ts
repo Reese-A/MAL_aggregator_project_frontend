@@ -15,7 +15,6 @@ export class GroupService {
     return this.http.get(`https://kuristina.herokuapp.com/anime/${username}.json`)
       .toPromise()
       .then((data) => {
-        console.log('Get Group Data: ', data);
         return data;
       })
       .catch((err) => {

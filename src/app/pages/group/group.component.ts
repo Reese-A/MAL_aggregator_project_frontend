@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { GroupService } from '../../services/group.service';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.scss']
 })
 
-export class GroupComponent {
+export class GroupComponent implements OnInit {
   userNames: any;
   usersSeries: any;
   groupShows: Object;
@@ -19,8 +20,11 @@ export class GroupComponent {
     this.usersSeries = [];
     this.groupShows = {};
     this.showsTitles = [];
-    this.loading = true;
+    this.loading = false;
+  }
 
+  ngOnInit() {
+    this.loading = true;
     this.groupService.getGroup()
       .toPromise()
       .then((data: Array<any>) => {
@@ -48,10 +52,7 @@ export class GroupComponent {
           return user['myanimelist']['anime'];
         });
       })
-
       .then((data) => {
-        // console.log('HERE: ', data);
-        // let userShows = [];
         const shows = {};
         for (let i = 0; i < this.usersSeries.length; i++) {
           for (let j = 0; j < this.usersSeries[i].length; j++) {
@@ -76,7 +77,6 @@ export class GroupComponent {
             }
           }
         }
-        // console.log('Shows: ', shows);
         this.showsTitles = Object.keys(shows).sort(function compare(a, b) {
           if (Number(shows[a]['userCount']) > Number(shows[b]['userCount'])) {
             return -1;
@@ -89,7 +89,6 @@ export class GroupComponent {
         this.loading = false;
         return this.groupShows = shows;
       })
-
       .catch((err) => {
         console.log(err);
       });
@@ -101,7 +100,7 @@ export class GroupComponent {
       .toPromise()
       .then((data) => {
         console.log(data);
-        return window.location.reload();
+        return window.location.reload(); // rerun oninit
       })
       .catch((err) => {
         console.log(err);
